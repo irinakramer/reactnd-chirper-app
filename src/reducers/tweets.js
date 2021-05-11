@@ -21,11 +21,11 @@ export default function tweets(state = {}, action) {
             const { tweet } = action;
 
             let replyingTo = {}
-            if (replyingTo !== null) {
+            if (tweet.replyingTo !== null) {
                 replyingTo = {
                     [tweet.replyingTo]: {
                         ...state[tweet.replyingTo],
-                        replies: state[tweet.replyingTo].replies.contact([tweet.id])
+                        replies: state[tweet.replyingTo].replies.concat([tweet.id])
                     }
                 }
             }

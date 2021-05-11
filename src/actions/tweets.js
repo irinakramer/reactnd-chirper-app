@@ -1,5 +1,5 @@
 import { saveLikeToggle, saveTweet } from '../utils/api'
-import { showLoading, hideLoading, LoadingBar } from 'react-redux-loading'
+import { showLoading, hideLoading } from 'react-redux-loading'
 
 export const RECEIVE_TWEETS = 'RECEIVE_TWEETS';
 export const TOGGLE_TWEET = 'TOGGLE_TWEET';
@@ -15,7 +15,7 @@ export function receiveTweets(tweets) {
 function addTweet(tweet) {
     return {
         type: ADD_TWEET,
-        tweet
+        tweet,
     }
 }
 
